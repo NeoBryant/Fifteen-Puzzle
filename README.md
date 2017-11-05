@@ -12,7 +12,7 @@
 
 制作网页实现下面的拼图游戏
 
-![panda]()
+![panda](https://github.com/NeoBryant/Fifteen-Puzzle/blob/master/img/%E6%95%88%E6%9E%9C%E5%9B%BE.jpeg)
 
 ### 需求规格
     1. UI（10分）：UI与上图完全一致；或者，自由发挥，设计出更加漂亮、合理的UI（可用其它图片）。
