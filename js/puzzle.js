@@ -1,7 +1,32 @@
 window.onload = function() {
     create_pic();
     document.getElementById("restart").addEventListener("click", random_pos);
+    document.getElementById("restore").addEventListener("click", restore);
+    document.getElementById("show_master_drawing").addEventListener("click", show_master_drawing);
 };
+
+/* 拼图复原 */
+function restore() {
+    /* window.location.reload(); */
+    for (var i = 1; i <= 16; i++) {
+        var item = document.getElementById("_position_"+i);
+        item.className = "picture_part"+" position_"+i;
+    }
+    document.getElementById("result").textContent = "拼图已复原！";
+    step = 1;
+}
+
+
+/* 样图的显示与隐藏 */ 
+function show_master_drawing() {
+    var drawing = document.getElementsByClassName("master_drawing");
+
+    if (drawing[0].id == "master_drawing") {
+        drawing[0].id = "master_drawing_show";
+    } else {
+        drawing[0].id = "master_drawing";
+    }
+}
 
 /* 
     检查产生的随机数列是否是合理的，因为有可能出现恢复不到原图的情况 
@@ -25,7 +50,7 @@ function create_pic() {
     for (var i = 1; i <= 16; i++) {
         var part = document.createElement("div");
         part.addEventListener("click", pic_move);
-        part.className = "picture_part" + " position_"+i + " picture_part";
+        part.className = "picture_part" + " position_"+i;
         picture.appendChild(part);
         part.id = "_position_"+i;
     }
@@ -82,8 +107,7 @@ var step = 1; /* 所用步数 */
 function check() {
     for (var i = 1; i <= 16; i++) {
         var item = document.getElementById("_position_"+i);
-        if (item.className != "picture_part" +" position_"+i + " picture_part" &&
-            item.className != "picture_part" + " position_" + i + " picture_part1") {
+        if (item.className != "picture_part" +" position_"+i) {
             document.getElementById("result").textContent = " 已用步数:"+step;
             return;
         }

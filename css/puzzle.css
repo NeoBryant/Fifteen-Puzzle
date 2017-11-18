@@ -21,7 +21,24 @@ body {
 
     background: url('../img/panda.jpg') no-repeat;
     background-size: 100%;
+
+    opacity: 0;
 }
+
+#master_drawing_show {
+      position: absolute;
+    top: 200px;
+    left: 300px;
+
+    width: 100px;
+    height: 100px;
+
+    background: url('../img/panda.jpg') no-repeat;
+    background-size: 100%;
+
+    opacity: 1;  
+}
+
 
 /* 结果显示 */
 #result {
@@ -37,9 +54,7 @@ body {
 }
 
 #picture,
-#restart,
-#result,
-#change_image {
+#result {
     margin-top: 30px;
     margin-right: auto;
     margin-left: auto;
@@ -54,9 +69,19 @@ body {
     margin-bottom: 30px;
 }
 
-/* 重新开始按钮 */
+/* 功能按钮 */
+#buttons {
+    height: 50px;
+    width: 500px;
+
+    margin: auto;
+
+    position: relative;
+}
+
 #restart,
-#change_image {
+#restore,
+#show_master_drawing {
     font-size: 18px;
     line-height: 40px;
 
@@ -68,10 +93,28 @@ body {
     color: white;
     background-color: #4286f5;
     box-shadow: 3px 4px 15px black;
+
+    position: absolute;
+
+    top: 0px;
 }
 
+#restart {
+    left: 0px;
+}
+
+#restore {
+    left: 195px;
+}
+
+#show_master_drawing {
+    right: 0px;
+}
+
+
 #restart:hover,
-#change_image:hover {
+#restore:hover,
+#show_master_drawing:hover {
     transform: scale(1.05);
 }
 
